@@ -1,8 +1,6 @@
 const mongoose = require('mongoose');
-const path = require('path');
-const { env } = require('process');
-require('dotenv').config()
-const mongoURI = env.mongoDB_URI // Replace 'yourDatabaseName' with the actual name of your database
+require("dotenv").config()
+const mongoURI = process.env.URI; // Replace 'yourDatabaseName' with the actual name of your database
 const connectToMongo = async () => {
   try {
     await mongoose.connect(mongoURI, { 
