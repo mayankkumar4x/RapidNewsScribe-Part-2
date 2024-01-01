@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
-
-const mongoURI = 'mongodb://127.0.0.1:27017/inotebook'; // Replace 'yourDatabaseName' with the actual name of your database
-
+const path = require('path');
+const { env } = require('process');
+require('dotenv').config()
+const mongoURI = env.mongoDB_URI // Replace 'yourDatabaseName' with the actual name of your database
 const connectToMongo = async () => {
   try {
     await mongoose.connect(mongoURI, { 
