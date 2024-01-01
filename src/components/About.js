@@ -1,11 +1,11 @@
 import React, { useContext, useEffect } from 'react'
 export default function About() {
-  
+
   return (
     <div className='container'>
       <div>
         <h4>About iNotebook</h4>
-        <p>Welcome to iNotebook, your go-to solution for efficient note-taking! iNotebook is a user-friendly and feature-rich application designed to simplify the process of creating, editing, and managing your notes. With a seamless login and signup process, our platform ensures a personalized and secure experience for every user.</p>
+        <p style={{textAlign: 'justify'  }}>Welcome to iNotebook, your go-to solution for efficient note-taking! iNotebook is a user-friendly and feature-rich application designed to simplify the process of creating, editing, and managing your notes. With a seamless login and signup process, our platform ensures a personalized and secure experience for every user.</p>
       </div>
       <div>
         <h4>Key Features:</h4>
