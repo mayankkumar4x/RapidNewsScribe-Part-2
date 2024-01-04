@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-
+import {API_URL} from '../api';
 const Login = (props) => {
     const [credential, setCredential] = useState({ email:"", password:""});
     let history=useNavigate();
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const response = await fetch('http://localhost:5000/api/auth/login', {
+        const response = await fetch(API_URL+'/api/auth/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -30,6 +30,8 @@ const Login = (props) => {
         setCredential({ ...credential, [e.target.name]: e.target.value })
     }
     return (
+        <>
+        {console.log(API_URL)}
         <div>
             <h2>Login to continue to iNotebook</h2>
             <form onSubmit={handleSubmit}>
@@ -45,6 +47,7 @@ const Login = (props) => {
                 <button type="submit" className="btn btn-primary">Submit</button>
             </form>
         </div>
+        </>
     )
 }
 

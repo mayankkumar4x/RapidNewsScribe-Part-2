@@ -1,13 +1,13 @@
 import { useState } from "react";
 import NoteContext from "./noteContext";
+import {API_URL} from '../../api'
 const NoteState=(props)=>{
-  const host = "https://nodejs-inotebook-api.onrender.com/";
     const notesInitial=[]
       const [notes,setNotes]=useState(notesInitial);
       //Get all Note
       const getNote=async()=>{
         //API CALL
-        const response=await fetch(`${host}/api/note/fetchallnotes`,{
+        const response=await fetch(`${API_URL}/api/note/fetchallnotes`,{
           method:'GET',
           headers:{
             "Content-Type": "application/json",
@@ -21,7 +21,7 @@ const NoteState=(props)=>{
       //Add a Note
       const addNote=async (title,description,tag)=>{
         //API CALL
-        const response=await fetch(`${host}/api/note/addnote`,{
+        const response=await fetch(API_URL+"/api/note/addnote",{
           method:'POST',
           headers:{
             "Content-Type": "application/json",
@@ -35,7 +35,7 @@ const NoteState=(props)=>{
       //Delete a Note
       const deleteNote=async(id)=>{
         //API CALL
-        const response=await fetch(`${host}/api/note/deletenote/${id}`,{
+        const response=await fetch(`${API_URL}/api/note/deletenote/${id}`,{
           method:'DELETE',
           headers:{
             "Content-Type": "application/json",
@@ -51,7 +51,7 @@ const NoteState=(props)=>{
       //Edit a Note
       const editNote=async(id, title, description, tag)=>{
         //API CALL
-        const response=await fetch(`${host}/api/note/updatenote/${id}`,{
+        const response=await fetch(`${API_URL}/api/note/updatenote/${id}`,{
           method:'PUT',
           headers:{
             "Content-Type": "application/json",
