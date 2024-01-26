@@ -1,15 +1,13 @@
 import React, { useState } from 'react'
-// import {useHistory} from 'react-router-dom'
 import { useNavigate } from 'react-router-dom';
 import {API_URL} from '../api'
 const Signup = (props) => {
     const [credential, setCredential] = useState({ name: "", email: "", password: "", cpassword: "" });
     let history = useNavigate();
-    // const [password,setPassword]=useState("");
     const handleSubmit = async (e) => {
         e.preventDefault();
         const { name, email, password } = credential;
-        console.log(process.env.API_URL);
+        // console.log(process.env.API_URL);
         const response = await fetch(API_URL+'/api/auth/createuser', {
             method: 'POST',
             headers: {
@@ -17,9 +15,9 @@ const Signup = (props) => {
             },
             body: JSON.stringify({ name, email, password })
         });
-        console.log(`${name} ${email} ${password}`);
+        // console.log(`${name} ${email} ${password}`);
         const json = await response.json()
-        console.log(json);
+        // console.log(json);
         if (json.success) {
             // save the auth token and redirect
             localStorage.setItem('token', json.authtoken);
@@ -35,8 +33,9 @@ const Signup = (props) => {
         setCredential({ ...credential, [e.target.name]: e.target.value })
     }
     return (
-        <div>
-            <h2>Signup to continue to iNotebook</h2>
+        <div className="d-flex w-50 justify-content-center p-5 bg-dark text-light">
+            <div className="w-100"> 
+            <h2 className='text-center mb-4'>Signup to Save Note</h2>
             <form onSubmit={handleSubmit}>
                 <div className="form-group my-2">
                     <label htmlFor="name">Name</label>
@@ -54,8 +53,9 @@ const Signup = (props) => {
                     <label htmlFor="cpassword">Confirm Password</label>
                     <input type="password" className="form-control my-2" name="cpassword" value={credential.cpassword} onChange={onChange} id="cpassword" placeholder="Confirm Password" pattern={credential.password} minLength={5} required />
                 </div>
-                <button type="submit" className="btn btn-primary">Submit</button>
+                <button type="submit" className="btn btn-primary mt-4 w-100">SignUp</button>
             </form>
+        </div>
         </div>
     )
 }

@@ -19,15 +19,16 @@ const NoteState=(props)=>{
         setNotes(json)
       }
       //Add a Note
-      const addNote=async (title,description,tag)=>{
+      const addNote=async (title,description,newsUrl,tag)=>{
         //API CALL
+        console.log(newsUrl);
         const response=await fetch(API_URL+"/api/note/addnote",{
           method:'POST',
           headers:{
             "Content-Type": "application/json",
             "auth-token": localStorage.getItem('token')
           },
-          body:JSON.stringify({title,description,tag})
+          body:JSON.stringify({title,description,newsUrl,tag})
         });
         const note=await response.json();
         setNotes(notes.concat(note))
@@ -49,7 +50,7 @@ const NoteState=(props)=>{
 
 
       //Edit a Note
-      const editNote=async(id, title, description, tag)=>{
+      const editNote=async(id, title, description, newsUrl,tag)=>{
         //API CALL
         const response=await fetch(`${API_URL}/api/note/updatenote/${id}`,{
           method:'PUT',
@@ -57,7 +58,7 @@ const NoteState=(props)=>{
             "Content-Type": "application/json",
             "auth-token": localStorage.getItem('token')
           },
-          body:JSON.stringify({title,description,tag})
+          body:JSON.stringify({title,description,newsUrl,tag})
         });
         const json=response.json();
         let newNotes=JSON.parse(JSON.stringify(notes))
@@ -69,13 +70,13 @@ const NoteState=(props)=>{
           {
             newNotes[index].title=title;
             newNotes[index].description=description;
+            newNotes[index].newsUrl=newsUrl;
             newNotes[index].tag=tag;
             break;
           }
         }
         setNotes(newNotes);
       }
-
     return (<NoteContext.Provider value={{notes,addNote,deleteNote,editNote,getNote}}>{props.children}</NoteContext.Provider>)
 }
 export default NoteState;

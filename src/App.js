@@ -25,7 +25,7 @@ function App() {
         <BrowserRouter>
           <Navbar />
           <Alert alert={alert}/>
-          <div className="container">
+          <div className="container d-flex justify-content-center">
           <Routes>
             <Route path="/" element={<Home showAlert={showAlert}/>} />
             <Route path="About" element={<About />} />

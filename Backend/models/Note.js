@@ -1,26 +1,31 @@
-const mongoose=require("mongoose");
-const {Schema} = mongoose;
-const NotesSchema=new Schema({
-    user:{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:'user'
+const mongoose = require("mongoose");
+const { Schema } = mongoose;
+const NotesSchema = new Schema({
+    // User is like a foreign key using for linking from a specific user. Every note will keep user reference also. 
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'user'
     },
-    title:{
-       type:String,
-        required:true
+    title: {
+        type: String,
+        required: true
     },
-    description:{
-        type:String,
-        required:true
+    description: {
+        type: String,
+        required: true
     },
-    tag:{
-        type:String,
-        default:"general"
+    newsUrl: {
+        type: String,
+        // required: true
     },
-    date:{
-        type:Date,
-        default:Date.now
+    tag: {
+        type: String,
+        default: "general"
+    },
+    date: {
+        type: Date,
+        default: Date.now
     },
 })
-module.exports=mongoose.model('note',NotesSchema)
+module.exports = mongoose.model('note', NotesSchema)
 //name and schema

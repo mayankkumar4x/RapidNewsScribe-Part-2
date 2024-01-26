@@ -32,8 +32,9 @@ const Login = (props) => {
     return (
         <>
         {console.log(API_URL)}
-        <div>
-            <h2>Login to continue to iNotebook</h2>
+        <div className="d-flex w-50 justify-content-center p-5 bg-dark text-light">
+            <div>
+            <h2 className='mb-4'>Login to Save Note</h2>
             <form onSubmit={handleSubmit}>
                 <div className="form-group my-2">
                     <label htmlFor="email">Email address</label>
@@ -44,8 +45,9 @@ const Login = (props) => {
                     <input type="password" className="form-control" name="password" value={credential.password} onChange={onChange} id="password" placeholder="Password" />
                 </div>
 
-                <button type="submit" className="btn btn-primary">Submit</button>
+                <button type="submit" className="btn btn-primary mt-4 w-100">Login</button>
             </form>
+        </div>
         </div>
         </>
     )

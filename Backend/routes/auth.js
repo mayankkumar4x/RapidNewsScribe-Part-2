@@ -2,23 +2,25 @@ const express = require('express');
 const User = require('../models/User');
 const { body, validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
+const jwt = require('jsonwebtoken');      //for secure communication between client and server
 var fetchuser=require("../middleware/fetchuser");
-const JWT_SECRET='Harryis'; //we can put any string here
+const JWT_SECRET='Harryis'; //we can put any string here for verfiy signature of token
 const router = express.Router();
 //Route 1:Create a User using: POST "/api/auth/createuser", No login required
-router.post('/createuser', [
-   body('name', 'Name must be in atleast 3 character').isLength({ min: 3 }),
+router.post('/createuser',
+ [body('name', 'Name must be in atleast 3 character').isLength({ min: 3 }),
    body('password', 'Password must be in at least 5 characters').isLength({ min: 5 }),
-   body('email', 'Enter a valid email').isEmail()], async (req, res) => {
-      // If there are errors, return Bad request and the errors
+   body('email', 'Enter a valid email').isEmail()], 
+   async (req, res) => {
+      // If there are errors in length of name, password or email format, return Bad request and the errors
       let success=false;
       const errors = validationResult(req);
       if (!errors.isEmpty()) {
          return res.status(400).json({success,errors: errors.array() });
       }
-      //check whether the user with this email exist already
+
       try {
+         //check whether the user with this email exist already
          let user = await User.findOne({ email: req.body.email });
          if (user) {
             return res.status(400).json({ success,error: "Sorry auser with this email already exits" });
@@ -85,13 +87,13 @@ router.post('/createuser', [
          res.status(500).send("Internal Server Error");
       }
       })
-      //Route 3: Get Logged in User Details using: POST "/api/auth/getuser", No login required
+      //Route 3: Get Logged in User Details using: POST "/api/auth/getuser",login required
       
          router.post('/getuser',fetchuser, 
             async (req, res) => {
                try{
                   const userId=req.user.id; 
-                  const user = await User.findById(userId).select("-password");
+                  const user = await User.findById(userId).select("-password"); // select user info expect password
                   res.send(user);
                }
                catch{
