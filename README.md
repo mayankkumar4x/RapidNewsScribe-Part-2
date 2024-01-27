@@ -10,18 +10,18 @@ Welcome to RapidNewsScribe, your go-to destination for curated and personalized 
 <!-- - Live previews -->
 <!-- - Fullscreen mode -->
 <!-- - Cross platform -->
-### News Reading:
+#### News Reading:
 - Users can read news articles from different domains on your website.
 - There is a filtering system to allow users to narrow down the news based on specific criteria.
-### Detailed News View:
+#### Detailed News View:
 - Clicking on "Read More" redirects users to the original news website, providing the full content of the selected news article.
-### User Authentication:
+#### User Authentication:
 - Users can create accounts and log in to your website.
-### News Saving:
+#### News Saving:
 - Authenticated users have the ability to save news articles for future reference.
-### Notes Feature:
+#### Notes Feature:
 - Clicking on "Save News" users are directed to a page where they can add notes about the specific news article.
-### Automatic News URL Saving with Notes for Future:
+#### Automatic News URL Saving with Notes for Future:
 When user saves a note , the system automatically associates news article url with note.
 <!-- # Getting Started with Create React App
 
