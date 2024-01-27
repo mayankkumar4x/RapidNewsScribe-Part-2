@@ -1,5 +1,29 @@
+# RapidNewsScribe
 
-# Getting Started with Create React App
+Welcome to RapidNewsScribe, your go-to destination for curated and personalized news experiences. Explore a world of diverse news articles from various domains, with the power to filter and tailor your newsfeed to your interests. Click into articles seamlessly to read more on the original source. With our user-friendly platform, registered users can save noteworthy articles and add personal notes for future reference. Immerse yourself in a dynamic and interactive news-reading journey, where information meets customization. 
+
+
+
+## Features
+
+<!-- - Light/dark mode toggle -->
+<!-- - Live previews -->
+<!-- - Fullscreen mode -->
+<!-- - Cross platform -->
+### News Reading:
+- Users can read news articles from different domains on your website.
+- There is a filtering system to allow users to narrow down the news based on specific criteria.
+### Detailed News View:
+- Clicking on "Read More" redirects users to the original news website, providing the full content of the selected news article.
+### User Authentication:
+- Users can create accounts and log in to your website.
+### News Saving:
+- Authenticated users have the ability to save news articles for future reference.
+### Notes Feature:
+- Clicking on "Save News" users are directed to a page where they can add notes about the specific news article.
+### Automatic News URL Saving with Notes for Future:
+When user saves a note , the system automatically associates news article url with note.
+<!-- # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -68,4 +92,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 ### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify) -->
