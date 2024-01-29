@@ -1,11 +1,11 @@
 ### News Section 
-![image](/image/Newspage.png)
+![image](/readme_image/Newspage.png)
 
 ### Notes Section
-![image](/image/Notes.png)
+![image](/readme_image/Notes.png)
 
 ### Edit Note, SignUp Form, Login Form
-![image](/image/Editnote.png)    ![image](/image/SignUp.png)![image](/image/Login.png)
+![image](/readme_image/Editnote.png)    ![image](/readme_image/SignUp.png)![image](/readme_image/Login.png)
 
 # RapidNewsScribe
 
