@@ -1,7 +1,16 @@
+### News Section 
+![image](/image/Newspage.png)
+
+### Notes Section
+![image](/image/Notes.png)
+
+### Edit Note, SignUp Form, Login Form
+![image](/image/Editnote.png)    ![image](/image/SignUp.png)![image](/image/Login.png)
+
 # RapidNewsScribe
 
-Welcome to RapidNewsScribe, your go-to destination for curated and personalized news experiences. Explore a world of diverse news articles from various domains, with the power to filter and tailor your newsfeed to your interests. Click into articles seamlessly to read more on the original source. With our user-friendly platform, registered users can save noteworthy articles and add personal notes for future reference. Immerse yourself in a dynamic and interactive news-reading journey, where information meets customization. 
-
+- A dynamic news website where users can explore and filter articles from various domains, read full stories seamlessly, and save articles with personalized notes with news URL for future reference.
+- Features include user authentication, intuitive news filtering, and an interactive interface for saving and annotating articles.
 
 
 ## Features
